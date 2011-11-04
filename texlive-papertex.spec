@@ -1,3 +1,9 @@
+# revision 19230
+# category Package
+# catalog-ctan /macros/latex/contrib/papertex
+# catalog-date 2010-06-30 22:56:10 +0200
+# catalog-license lppl
+# catalog-version 1.2b
 Name:		texlive-papertex
 Version:	1.2b
 Release:	1
@@ -53,6 +59,7 @@ users to create newsletters too.
 #- source
 %doc %{_texmfdistdir}/source/latex/papertex/papertex.dtx
 %doc %{_texmfdistdir}/source/latex/papertex/papertex.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,3 +70,5 @@ users to create newsletters too.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
