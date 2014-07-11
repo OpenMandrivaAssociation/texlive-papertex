@@ -6,7 +6,7 @@
 # catalog-version 1.2b
 Name:		texlive-papertex
 Version:	1.2b
-Release:	7
+Release:	8
 Summary:	Class for newspapers, etc
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/papertex
