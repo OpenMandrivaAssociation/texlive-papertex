@@ -1,19 +1,13 @@
-# revision 19230
-# category Package
-# catalog-ctan /macros/latex/contrib/papertex
-# catalog-date 2010-06-30 22:56:10 +0200
-# catalog-license lppl
-# catalog-version 1.2b
 Name:		texlive-papertex
-Version:	1.2b
-Release:	11
+Version:	19230
+Release:	1
 Summary:	Class for newspapers, etc
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/papertex
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/papertex.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ choose the number of columns, style and so on. The class allows
 users to create newsletters too.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -52,24 +46,11 @@ users to create newsletters too.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.2b-2
-+ Revision: 754640
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.2b-1
-+ Revision: 719188
-- texlive-papertex
-- texlive-papertex
-- texlive-papertex
-- texlive-papertex
-
