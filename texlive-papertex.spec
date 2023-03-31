@@ -1,6 +1,6 @@
 Name:		texlive-papertex
 Version:	19230
-Release:	1
+Release:	2
 Summary:	Class for newspapers, etc
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/papertex
